@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #usertable a {
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        button {
+            border: 2px solid rgb(30, 162, 210);
+            border-radius: 4px;
+            background: transparent;
+        }
+
+        button a {
+            color: black;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: rgb(30, 162, 210);
+        }
+
+        button:hover a {
+            color: whitesmoke;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        th {
+            background-color: rgb(30, 162, 210);
+            color: white;
+            font-size: large;
+            border-bottom: 2px hidden;
+            box-shadow: 2px 2px 5px gray;
+        }
+
+        td {
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        tr {
+            border-bottom: 2px hidden;
+        }
+
+        tr:hover {
+            background-color: #ececec;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Person Name</th>
+            <th>Username</th>
+            <th>E-mail</th>
+            <th>User information</th>
+
+        </tr>
+        <tbody id="usertable">
+        </tbody>
+    </table>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!--Jquery kütüphanesi-->
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/users", // Veri alınacak URL
+                method: "GET", // HTTP yöntemi (GET, POST, vb.)
+                success: function (data) {
+
+                    let tableContent = ''
+                    for (let i = 0; i < data.length; i++) {
+                        var user = data[i]
+                        var userName = data[i]
+                        var eMail = data[i]
+                        const userId = data[i].id
+                        tableContent += `<tr>
+                            <td>${user.name}</td>
+                            <td>${userName.username}</td>
+                            <td>${eMail.email}</td>
+                            <td>
+                                <button>
+                            <a class="detail-button" href="userInformation.html?userId=${userId}">Detail</a>
+                                </button>
+                            </td>
+                        </tr>`
+
+                    }
+
+                    let personName = document.getElementById('usertable')
+                    personName.innerHTML = tableContent
+
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

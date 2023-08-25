@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Detail</title>
+    <link rel="shortcut icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAET0lEQVR4nO2a3U9cRRTAZ7UaH/TVr79BTRT74stNdmZbmVkw68w0fAZqBdq0tKGL2DRNaGJRDAqYphaEtmBaa6wJD/g3qGVpqbb61D5Y2heVttJdNirsmHPhwuxlkYV1l511fslJbu7O3TvnzPma2UXIYrFYLBaLxWKxWCwFIbCDyTLMRC2mvM0VJmqD4cgr8BkqVRwqn8WU92PK7xImVCaBzzDlfcGKqmdQCREIMtGBGY+vpfgqofwhobzdeI9wnIYnCOUX/QruqntbdX3YpwaGRtTpoRH3Gu6t8ggmvoDvQIYS8Cu/71CHmrx6TaVSKeUH7sWuTKm9B99ZZQQjPSHIRIeuCKz0wsKCWo/5+Xl1avCs3xuiyCRCocjThIpZTwFw9Y2SZgTKH0ISRaaAKe/X3T6blc/kCb5w6EWGENBLHcT8ZpmYnNK94I4RuYCU81eXs319U8aEly3wrKzds2yEpWapuCHlssabMJS3XHmvu3fFAExUoWKHUN7uTXjwzOc5G2BgeNSsakCYiC5n/+HR3A0wNLLSE4TlYVTsEMqr/9chsIPJMr3lzTUJCi0J4tf5y8i0MjgxObVpA1yOXdHjf9qIMgjAltabODQz0NRsFHim+UC73gd8jExthU8Nnt2wAU6eHk5rhY07IyBaOfSMkI0nwJg05RcPStqQgQRgK6srAuEAOWGt7TDEfJrbL67+eWNi3w8cZviNAALt7YnuXneLDAKlTs/2K8IvmHwg4hFwmyM45sr6SEzMLrm9mSufCUhisKWFXd2/KD8N2R6SKCphAtDQQMfoHYu714tNTumsuMViWYWU8nEcjmwnlO/CTDYTxt8Fca/hXjiyHcagUoKUyxcxFV2YiRim/M/1SqA7hooJzPiJEIu8gEykrKz5Mcz4W4SKG1nX/jUNIq6HqGx0HGcbMoEQ5XWEiVuZlAmFpdrdclAd7+pRfScH1NC5867ANdxrbG51x2Q2Br8J542oWCGVVc8Txr/xT7yC16kPej5R312OqXg8se5mCMZ8+31Mvd/T7z6bwRjjO3dGnkPFRLBchjDj9/SJ8urd6stLY2oumVSbBZ69+NWY+11pYcH4DAlzjIoBzHgDYfwv3c0//excTor7SczNudtpPTwWk6Ws31LlCZP7CBMpb1I1jXvVjzd+Vvnih+s/qeqGFt0bUkEqWrZGeSoZYeJvbzJN+w+rX3/7XeWbmZl7ab8ZYsrnMeVvFFT5YAV/Sf/HR2v0qOumhSKRmFMH2o7oOSEO/UZBlHccZxtmfNJ7ef2e/er+/Qeq0Dz4Y1Y1NLXq/cI16D/ybgBMxTHvpezNWnV7+q7aKn65fUexSI1uhGN5VV5K+aju+l+Pjaut5tLYeFoodHZ2PpJXI2DGp+Bl7UeP5/Srz38F/PkieqRzyQAihvKNI+WTwyMXDsXjiY+UUt3FIMlksmfwzGj0tcrKp/JuAIvFYrFYLBZUIvwDeHi9UYJaONEAAAAASUVORK5CYII="
+        type="image/x-icon">
+    <style>
+        body {
+            background: rgb(241 245 248);
+            color: rgb(16 42 66);
+            line-height: 1.5;
+            font-size: 0.875rem;
+        }
+
+        button {
+            background: transparent;
+            margin-top: 2rem;
+            color: rgb(16 42 66);
+            padding: 5px;
+            border-radius: 3px;
+            box-shadow: 2px 2px 8px gray;
+        }
+
+        button:hover {
+            background-color: rgb(16 42 66);
+            color: white;
+        }
+
+        .block {
+            width: 85vw;
+            max-width: var(--fixed-width);
+            margin: 0 auto;
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+
+        h4 {
+            text-transform: uppercase;
+            font-weight: 500;
+            color: rgb(73 166 233);
+            letter-spacing: 2px;
+            margin: 0.5rem 0;
+            font-size: 0.875rem;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid rgb(158 178 199);
+            background: rgb(255 255 255);
+            padding: 0.25rem;
+            border-radius: 50%;
+            box-shadow: 2px 2px 8px gray;
+        }
+
+        .title {
+            margin-bottom: 1.25rem;
+            letter-spacing: 2px;
+            color: rgb(97 125 152);
+        }
+
+        p {
+            color: rgb(97 125 152);
+        }
+
+
+        .username {
+            color: rgb(97 125 152);
+            line-height: 1.8;
+            max-width: 35em;
+            margin: 0 auto;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="block">
+        <div class="container" id="userDetail">
+            <h2 style="margin-bottom: 3rem;font-size: 2rem;">USER DETAİL</h2>
+            <img src="" class="img" alt="">
+            <h4 style="font-family: system-ui;"></h4>
+            <p class="username"></p>
+
+            <button onclick="postOn()">Post Information</button>
+        </div>
+    </div>
+
+    <div style="display: none;" class="posts container" id="posts">
+        <h2>Post Information</h2>
+        <p><strong></strong></p>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+
+        function postOn() {
+            $('#posts').toggle()
+        }
+
+        let imagesPerson = ["https://www.course-api.com/images/people/person-2.jpeg",
+            "https://www.course-api.com/images/people/person-1.jpeg",
+            "https://randomuser.me/api/portraits/women/24.jpg",
+            "https://avatars.githubusercontent.com/u/818819?v=4",
+            "https://avatars.githubusercontent.com/u/12502?v=4",
+            "https://avatars.githubusercontent.com/u/3006?v=4"
+        ]
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+            const params = new URLSearchParams(window.location.search)
+            const userId = params.get('userId')
+
+            $.ajax({
+                url: `https://jsonplaceholder.typicode.com/users/${userId}`, // Veri alınacak URL
+                method: "GET", // HTTP yöntemi (GET, POST, vb.)
+                success: function (data) {
+
+
+                    $("#userDetail").html(`
+                    <h2 style="margin-bottom: 3rem;font-size: 2rem;">USER DETAİL</h2>
+                    <img src="${imagesPerson[Math.floor(Math.random() * imagesPerson.length)]}" class="img" alt="">
+                    <h4 style="font-family: system-ui;">${data.name}</h4>
+                    <p class="username">${data.username}</p>
+                    <p>PHONE : ${(data.phone)} , WEBSİTE : ${(data.website)}</p> <p>ADDRESS : ${(JSON.stringify(data.address))}</p> <p>COMPANY : ${(JSON.stringify(data.company))}</p>
+                    <button onclick="postOn()">Post Information</button>`)
+
+
+                }
+            })
+
+            $.ajax({
+                url: `https://jsonplaceholder.typicode.com/posts?userId=${userId}`,
+                method: "GET",
+                success: function (event) {
+                    const titleArray = event
+
+                    let titles = []
+                    let texts = []
+
+                    titleArray.forEach(item => {
+                        const title = item.title
+                        titles.push(title)
+                        const text = item.body
+                        texts.push(text)
+                        console.log(title)
+
+                    });
+
+                    $("#posts").html(`
+                    <p><strong>${titles + ", "}</strong>${texts}</p>`)
+
+
+
+                }
+            })
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
